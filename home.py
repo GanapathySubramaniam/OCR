@@ -49,11 +49,13 @@ def ui():
     col1,col2=st.columns(2)
     with col1:
         img_file = st.file_uploader("Please choose an image file")
-        temperature=st.slider('Temperature',min_value=0.0,max_value=1.0,step=0.05,value=0.5)
+        #temperature=st.slider('Temperature',min_value=0.0,max_value=1.0,step=0.05,value=0.5)
     if st.button('Start Scanning'):
-        st.code('Your function goes here')
-        image = Image.open(img_file)
-        st.image(image)
+        #st.code('Your function goes here')
+        #image = Image.open(img_file)
+        #st.image(image)
+        text_val=your_function(image_var) # this function should return the text
+        st.code(text_val)
         st.balloons()
     st.write('Contact Us:')
     col1,col2=st.columns(2)
