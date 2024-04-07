@@ -52,7 +52,7 @@ def ui():
         st.write('The app which gives life to textual images!')
     with col2:
         st.write('lottie')
-        load_lottie_animation('lottie_jsons\scanning_image.json')
+        #load_lottie_animation('lottie_jsons\scanning_image.json')
     st.write('Instructions')
     st.write('Upload an Image to proceed')
     col1,col2=st.columns(2)
