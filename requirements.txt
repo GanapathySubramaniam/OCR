@@ -4,5 +4,4 @@ pytesseract==0.3.10
 tesserocr==2.6.3
 streamlit==1.32.2
 streamlit_lottie==0.0.5
-libtesseract-dev
-libleptonica-dev
+libleptonica-dev== 1.74.2
