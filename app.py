@@ -6,6 +6,11 @@ import plotly.express as px
 import pytesseract
 from PIL import Image as PImage
 
+def generate_data(data):
+    for i in data:
+        yield f"Data point: {i}"
+        time.sleep(0.5)  # Simulate some processing time
+
 
 
 def read_image(img_file):
@@ -66,7 +71,7 @@ def ui():
         image = read_image(img_file)
         st.image(image)
         text_val=get_text(image)
-        st.write_stream(text_val)
+        st.write_stream(generate_data(text_val))
         st.balloons()
     st.write('Contact Us:')
     col1,col2=st.columns(2)
