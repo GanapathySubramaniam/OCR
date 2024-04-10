@@ -5,6 +5,7 @@ import base64
 import plotly.express as px
 import pytesseract
 from PIL import Image as PImage
+import time
 
 def generate_data(data):
     for i in data:
