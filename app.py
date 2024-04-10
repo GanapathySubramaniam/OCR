@@ -1,5 +1,5 @@
 import streamlit as st
-from helpers import streamlit_session,load_lottie_animation
+from helper import streamlit_session,load_lottie_animation
 from  PIL import Image
 import base64
 import plotly.express as px
