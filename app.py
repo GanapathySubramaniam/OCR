@@ -68,20 +68,25 @@ def ui():
     st.write('Contact Us:')
     col1,col2=st.columns(2)
     with col1:
-        st.write(f'Ganapathy Subamaniam Sundar')
+        names=['Ganapathy Subamaniam Sundar','Rajat Kumar','Hetal Prajapati']
+        for name in names:
+            st.write(name)
     with col2:
+
+        emails=['c0908063@mylambton.ca','c0912858@mylambton.ca','c0908005@mylambton.ca','c0911591@mylambton.ca']
         st.write('Email')
-        st.code('ganapathysubramaniam1999@gmail.com')
-        url='https://www.linkedin.com/in/ganapathy-subramaniam-sundar-b08aa222b/'
-        st.write('Connect with me in [linkedIn](%s)'%url)
-    page_bg_img = '''
-                <style>
-                body {
-                background-image: url("https://images.unsplash.com/photo-1542281286-9e0a16bb7366");
-                background-size: cover;
-                }
-                </style>
-                '''
+        for email in emails:
+            st.code(email)
+        #url='https://www.linkedin.com/in/ganapathy-subramaniam-sundar-b08aa222b/'
+        #     st.write('Connect with me in [linkedIn](%s)'%url)
+        # page_bg_img = '''
+        #             <style>
+        #             body {
+        #             background-image: url("https://images.unsplash.com/photo-1542281286-9e0a16bb7366");
+        #             background-size: cover;
+        #             }
+        #             </style>
+        #             '''
 
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
