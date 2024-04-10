@@ -72,7 +72,7 @@ def ui():
         image = read_image(img_file)
         st.image(image)
         text_val=get_text(image)
-        st.write_stream(generate_data(text_val))
+        st.write_stream(st.code(generate_data(text_val)))
         st.balloons()
     st.write('Contact Us:')
     col1,col2=st.columns(2)
