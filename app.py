@@ -55,7 +55,6 @@ def ui():
         st.header('Welcome to the CogniVix')
         st.write('The app which gives life to textual images!')
     with col2:
-        st.write('lottie')
         load_lottie_animation('./lottie_jsons/scanning_image.json')
     st.write('Instructions')
     st.write('Upload an Image to proceed')
