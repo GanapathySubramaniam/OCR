@@ -7,6 +7,10 @@ import pytesseract
 from PIL import Image as PImage
 
 
+
+def read_image(img_file):
+    return Image.open(img_file)
+
 def get_text(image):
     pytesseract.pytesseract.tesseract_cmd = r'/usr/bin/tesseract'
     return pytesseract.image_to_string(image)
@@ -60,7 +64,7 @@ def ui():
         img_file = st.file_uploader("Please choose an image file")
 
     if st.button('Start Scanning'):
-        image = Image.open(img_file)
+        image = read_image(img_file)
         st.image(image)
         text_val=get_text(image)
         st.code(text_val)
@@ -72,18 +76,18 @@ def ui():
         emails=['c0908063@mylambton.ca','kapileshvarap@gmail.com','c0912858@mylambton.ca','c0908005@mylambton.ca','c0911591@mylambton.ca']
 
         for name,email in zip(names,emails):
-            st.write(names)
+            st.write(name)
             st.code(f'{email}')
         #url='https://www.linkedin.com/in/ganapathy-subramaniam-sundar-b08aa222b/'
         #     st.write('Connect with me in [linkedIn](%s)'%url)
-        # page_bg_img = '''
-        #             <style>
-        #             body {
-        #             background-image: url("https://images.unsplash.com/photo-1542281286-9e0a16bb7366");
-        #             background-size: cover;
-        #             }
-        #             </style>
-        #             '''
+        page_bg_img = '''
+                     <style>
+                     body {
+                     background-image: url("https://images.unsplash.com/photo-1542281286-9e0a16bb7366");
+                     background-size: cover;
+                     }
+                     </style>
+                     '''
 
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
