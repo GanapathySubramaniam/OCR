@@ -68,12 +68,11 @@ def ui():
     st.write('Contact Us:')
     col1,col2=st.columns(2)
     with col1:
-        names=['Ganapathy Subamaniam Sundar','Rajat Kumar','Hetal Prajapati']
+        names=['Ganapathy Subamaniam Sundar','Kapileshvar A P','Rajat Kumar','Hetal Prajapati']
         for name in names:
             st.write(name)
     with col2:
-
-        emails=['c0908063@mylambton.ca','c0912858@mylambton.ca','c0908005@mylambton.ca','c0911591@mylambton.ca']
+        emails=['c0908063@mylambton.ca','kapileshvarap@gmail.com','c0912858@mylambton.ca','c0908005@mylambton.ca','c0911591@mylambton.ca']
         st.write('Email')
         for email in emails:
             st.code(email)
