@@ -69,13 +69,10 @@ def ui():
     col1,col2=st.columns(2)
     with col1:
         names=['Ganapathy Subamaniam Sundar','Kapileshvar A P','Rajat Kumar','Hetal Prajapati']
-        for name in names:
-            st.write(name)
-    with col2:
         emails=['c0908063@mylambton.ca','kapileshvarap@gmail.com','c0912858@mylambton.ca','c0908005@mylambton.ca','c0911591@mylambton.ca']
         st.write('Email')
-        for email in emails:
-            st.code(email)
+        for name,email in zip(names,emails):
+            st.code(f'{name}:\n{email}')
         #url='https://www.linkedin.com/in/ganapathy-subramaniam-sundar-b08aa222b/'
         #     st.write('Connect with me in [linkedIn](%s)'%url)
         # page_bg_img = '''
