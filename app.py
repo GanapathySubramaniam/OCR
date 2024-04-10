@@ -13,7 +13,7 @@ def read_image(img_file):
 
 def get_text(image):
     pytesseract.pytesseract.tesseract_cmd = r'/usr/bin/tesseract'
-    return pytesseract.image_to_string(image)
+    return str(pytesseract.image_to_string(image))
 
 
 df = px.data.iris()
