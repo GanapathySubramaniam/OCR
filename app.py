@@ -9,7 +9,7 @@ import time
 
 def generate_data(data):
     for i in data:
-        yield f"Data point: {i}"
+        yield f"{i}"
         time.sleep(0.5)  # Simulate some processing time
 
 
