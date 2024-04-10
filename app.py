@@ -10,7 +10,7 @@ import time
 def generate_data(data):
     for i in data:
         yield f"{i}"
-        time.sleep(0.1)  # Simulate some processing time
+        time.sleep(0.05)  # Simulate some processing time
 
 
 
