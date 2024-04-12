@@ -73,6 +73,13 @@ def ui():
         st.image(image)
         text_val=get_text(image)
         st.write_stream(generate_data(text_val))
+        confidences = []
+        for i, block in enumerate(text_val.splitlines()):
+            if i > 0:  # Skip the header line
+                _, _, _, _, conf, _ = block.split()
+                confidences.append(int(conf))
+        
+        st.code(confidences)
         if st.download_button(
                         label="Download",
                         data=text_val,
