@@ -72,17 +72,20 @@ def ui():
 
     if st.button('Start Scanning'):
         image = read_image(img_file)
-        st.image(image)
-        text_val=get_text(image)
-        with st.expander("Expand me!"):
-            st.write_stream(generate_data(text_val))
-            if st.download_button(
-                            label="Download",
-                            data=text_val,
-                            file_name='my_data.txt',
-                            mime='text/plain'
-                            ):
-                st.write('Thanks for downloading!!')
+        c1,c2=st.columns(2)
+        with c1:
+            st.image(image)
+        with c2:
+            with st.expander("Expand me!"):
+                text_val=get_text(image)
+                st.write_stream(generate_data(text_val))
+                if st.download_button(
+                                label="Download",
+                                data=text_val,
+                                file_name='my_data.txt',
+                                mime='text/plain'
+                                ):
+                    st.write('Thanks for downloading!!')
         
     st.write('Contact Us:')
     col1,col2=st.columns(2)
