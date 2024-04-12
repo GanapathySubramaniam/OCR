@@ -73,11 +73,15 @@ def ui():
         st.image(image)
         text_val=get_text(image)
         st.write_stream(generate_data(text_val))
-        confidences = []
-        for i, block in enumerate(text_val.splitlines()):
-            if i > 0 and block.strip():  # Check for empty lines after removing whitespace
-                _, _, _, _, conf, _ = block.split()
-                confidences.append(int(conf))
+        confidences=[]
+        if i > 0: 
+            data_fields = block.split()  # Split the line into parts
+            for field in data_fields:
+                if field.isdigit():  # Check if it's a number
+                    conf = int(field)
+                    confidences.append(conf)
+                    break  # Assume confidence score is found
+
         
         st.code(confidences) 
         
