@@ -76,15 +76,14 @@ def ui():
         text_val=get_text(image)
         with st.expander("Expand me!"):
             st.write_stream(generate_data(text_val))
+            if st.download_button(
+                            label="Download",
+                            data=text_val,
+                            file_name='my_data.txt',
+                            mime='text/plain'
+                            ):
+                st.write('Thanks for downloading!!')
         
-        if st.download_button(
-                        label="Download",
-                        data=text_val,
-                        file_name='my_data.txt',
-                        mime='text/plain'
-                        ):
-            st.write('Thanks for downloading!!')
-        st.balloons()
     st.write('Contact Us:')
     col1,col2=st.columns(2)
     with col1:
