@@ -6,6 +6,8 @@ import plotly.express as px
 import pytesseract
 from PIL import Image as PImage
 import time
+from collections import Counter
+
 
 def generate_data(data):
     for i in data:
@@ -73,17 +75,17 @@ def ui():
         st.image(image)
         text_val=get_text(image)
         st.write_stream(generate_data(text_val))
-        confidences=[]
-        if i > 0: 
-            data_fields = block.split()  # Split the line into parts
-            for field in data_fields:
-                if field.isdigit():  # Check if it's a number
-                    conf = int(field)
-                    confidences.append(conf)
-                    break  # Assume confidence score is found
-
+        confidences = []
+        for i, block in enumerate(text_val.splitlines()):
+            if i > 0: 
+                data_fields = block.split()  # Split the line into parts
+                for field in data_fields:
+                    if field.isdigit():  # Check if it's a number
+                        conf = int(field)
+                        confidences.append(conf)
+                        break  # Assume confidence score is found
         
-        st.code(confidences) 
+        st.code(confidences)  
         
         if st.download_button(
                         label="Download",
